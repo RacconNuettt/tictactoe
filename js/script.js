@@ -3,7 +3,6 @@ const cells = document.querySelectorAll('.celda');
 const mensaje = document.getElementById('mensaje');
 const puntajeJugador = document.getElementById('jugador-j');
 const puntajeComputadora = document.getElementById('jugador-c');
-
 const matriz = [
     ['', '', ''],
     ['', '', ''],
@@ -35,18 +34,18 @@ function click(event) {
                 localStorage.setItem('ptsJ', ptsJ);
                 puntajeJugador.textContent = ptsJ;
             }
-        }, 10);
+        });
         return;
     }
 
     if (empate()) {
-        setTimeout(() => mensaje.innerHTML = '¡Empate!', 10);
+        setTimeout(() => mensaje.innerHTML = '¡Empate!');
         return;
     }
 
     if (jugador === 'X') {
         jugador = 'O';
-        setTimeout(jugarComputadora, 500);
+        setTimeout(jugarComputadora);
     } else {
         jugador = 'X';
     }
